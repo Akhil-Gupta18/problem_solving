@@ -13,7 +13,7 @@ public:
             if(g == nums[i])
             {
                 lcount++;
-                cout<<lcount<<" ";
+                //cout<<lcount<<" ";
             }
             else
             {
