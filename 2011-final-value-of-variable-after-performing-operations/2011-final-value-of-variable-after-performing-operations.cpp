@@ -2,7 +2,7 @@ class Solution {
 public:
     int finalValueAfterOperations(vector<string>& operations) 
     {
-        string prin = "++X";
+       /* string prin = "++X";
         string poin = "X++";
         int n = operations.size();
         int val = 0;
@@ -21,6 +21,14 @@ public:
                 --val;
             }
                 
+        }
+        return val;*/
+        int val = 0;
+        for(string &s : operations)
+        {
+            if(s[1] == '+') val++;
+            else
+                --val;
         }
         return val;
         
