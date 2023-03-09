@@ -4,8 +4,6 @@ public:
     {
         string prin = "++X";
         string poin = "X++";
-        string prde = "--X";
-        string pode = "X--";
         int n = operations.size();
         int val = 0;
         for(int i = 0 ; i<n;i++)
