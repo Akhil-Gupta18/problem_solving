@@ -24,7 +24,7 @@ public:
         }
         return val;*/
         int val = 0;
-        for(auto &s : operations)
+        for(string &s : operations)
         {
             if(s[1] == '+') val++;
             else
