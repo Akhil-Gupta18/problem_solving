@@ -2,7 +2,7 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) 
     {
-        int n = nums.size();
+       /* int n = nums.size();
         int gcount = 0;
         int lcount = 0;
         sort(nums.begin(),nums.end());
@@ -38,6 +38,8 @@ public:
           it = nums[n-1];
       }
         //cout<<gcount;
-        return it;
+        return it;*/
+        sort(nums.begin(),nums.end());
+        return nums[nums.size()/2];
     }
 };
