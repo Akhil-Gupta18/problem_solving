@@ -20,7 +20,7 @@ public:
             else
                 high--;
             }
-        return pos;*/
+        return pos;
         int it = 0;
         int i = 1;
         vector <int> pos;
@@ -41,7 +41,20 @@ public:
             }
 
         }
-        return pos;
+        return pos;*/
+        map <int,int> m;
+        for(int i = 0;i<nums.size();i++)
+        {
+           int rem = target - nums[i];
+            if(m.find(rem) != m.end())
+            {
+                return {i,m[rem]};
+            }
+            else
+                m[nums[i]] = i;
+        }
+        return {-1,-1};
+        
         
         
     }
