@@ -1,45 +1,31 @@
 class Solution {
 public:
-    int majorityElement(vector<int>& nums) 
+    int majorityElement(vector<int> v) {
+	// Write your code here
+    int cnt = 0;
+    int major;
+    for(int i = 0;i<v.size();i++)
     {
-       /* int n = nums.size();
-        int gcount = 0;
-        int lcount = 0;
-        sort(nums.begin(),nums.end());
-        int g = nums[0];
-        int it = nums[0];
-        for(int i = 0;i<n;i++)
+        if(cnt == 0)
         {
-            if(g == nums[i])
-            {
-                lcount++;
-                //cout<<lcount<<" ";
-            }
-            else
-            {
-                if(lcount > gcount)
-                {
-                    gcount = lcount;
-                    lcount = 1;
-                    g = nums[i];
-                    it = nums[i-1];
-                }
-                else
-                {
-                    lcount = 1;
-                    g = nums[i];
-                }
-            }
+            cnt = 1;
+            major = v[i];
         }
-       // cout<<lcount<<endl<<gcount<<endl;
-      if(lcount > gcount)
-      {
-          gcount = lcount;
-          it = nums[n-1];
-      }
-        //cout<<gcount;
-        return it;*/
-        sort(nums.begin(),nums.end());
-        return nums[nums.size()/2];
+        else if(major==v[i])
+        {
+            cnt++;
+        }
+        else
+        cnt--;
     }
+    int cnt1 = 0;
+    for(int i = 0;i<v.size();i++)
+    {
+        if(v[i] == major)
+        cnt1++;
+    }
+    if(cnt1>v.size()/2)
+    return major;
+    return -1;
+}
 };
