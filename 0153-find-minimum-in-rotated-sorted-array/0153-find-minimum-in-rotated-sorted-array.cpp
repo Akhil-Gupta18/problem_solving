@@ -13,9 +13,7 @@ public:
 			h = mid-1;
 		}
 		else
-		{
-			if(arr[l]<min)
-			min = arr[l];	
+		{	
 			l = mid+1;
 
 		}
