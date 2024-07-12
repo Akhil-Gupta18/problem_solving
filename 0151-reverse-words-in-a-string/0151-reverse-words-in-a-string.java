@@ -15,7 +15,6 @@ class Solution {
             {
                 if(!temp.equals(""))
                 {
-                    //System.out.println(temp);
                 stact.push(temp);
                 }
                 temp = "";
@@ -26,8 +25,7 @@ class Solution {
         {
             stact.push(temp);
         }
-        String ans = stact.peek();
-        stact.pop();
+        String ans = stact.pop();
         while(stact.size()!=0)
         {
             ans=ans +" " + stact.pop(); 
