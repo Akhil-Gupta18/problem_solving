@@ -33,6 +33,7 @@ class Solution {
                 if(temp.left == null && temp.right == null )
                 {
                     level = Math.min(l,level);
+                    return l;
                 }
                 else
                 {
