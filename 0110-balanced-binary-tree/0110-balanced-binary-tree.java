@@ -15,40 +15,22 @@
  */
 class Solution {
     public boolean isBalanced(TreeNode root) {
-        if(root == null)
-            return true;
-        boolean leftB = isBalanced(root.left);
-        boolean rightB = isBalanced(root.right);
-        if(leftB && rightB)
-        {
-            int left = heightTree(root.left);
-            int right = heightTree(root.right);
-            if(Math.abs(left-right)<=1)
-                return true;
-        }
-        return false;
+        return dfs(root)!=-1;
+        
         
     }
-    public int heightTree(TreeNode node)
+    public int dfs(TreeNode root)
     {
-        if(node == null)
+        if(root == null)
             return 0;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(node);
-        int level = 0;
-        while(!q.isEmpty())
-        {
-            level++;
-            int n = q.size();
-            for(int i = 0;i<n;i++)
-            {
-                TreeNode temp = q.poll();
-                if(temp.left!=null)
-                    q.add(temp.left);
-                if(temp.right!=null)
-                    q.add(temp.right);
-            }
-        }
-        return level;
+        int left = dfs(root.left);
+        if(left == -1)
+            return -1;
+        int right = dfs(root.right);
+        if(right == -1)
+            return -1;
+        if(Math.abs(left - right) > 1)
+            return -1;
+        return Math.max(left,right)+1;
     }
 }
